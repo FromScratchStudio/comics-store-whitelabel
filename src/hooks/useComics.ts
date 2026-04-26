@@ -14,22 +14,38 @@ export function useComics(): UseComicsResult {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetch = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const catalog = await catalogService.getCatalog();
-      setComics(catalog.comics);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to load comics');
-    } finally {
-      setLoading(false);
-    }
+  const doFetch = useCallback((cancelled: { current: boolean }) => {
+    catalogService
+      .getCatalog()
+      .then((catalog) => {
+        if (!cancelled.current) {
+          setComics(catalog.comics);
+          setError(null);
+          setLoading(false);
+        }
+      })
+      .catch((err) => {
+        if (!cancelled.current) {
+          setError(err instanceof Error ? err.message : 'Failed to load comics');
+          setLoading(false);
+        }
+      });
   }, []);
 
   useEffect(() => {
-    fetch();
-  }, [fetch]);
+    const cancelled = { current: false };
+    doFetch(cancelled);
+    return () => {
+      cancelled.current = true;
+    };
+  }, [doFetch]);
 
-  return { comics, loading, error, refetch: fetch };
+  const refetch = useCallback(() => {
+    setLoading(true);
+    setError(null);
+    const cancelled = { current: false };
+    doFetch(cancelled);
+  }, [doFetch]);
+
+  return { comics, loading, error, refetch };
 }

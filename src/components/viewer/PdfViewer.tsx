@@ -17,6 +17,7 @@ interface Props {
 
 export default function PdfViewer({ src, initialPage = 0, onPageChange }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [prevSrc, setPrevSrc] = useState(src);
   const [pdf, setPdf] = useState<PDFDocumentProxy | null>(null);
   const [currentPage, setCurrentPage] = useState(initialPage + 1); // pdf.js is 1-indexed
   const [numPages, setNumPages] = useState(0);
@@ -25,11 +26,18 @@ export default function PdfViewer({ src, initialPage = 0, onPageChange }: Props)
   const [error, setError] = useState<string | null>(null);
   const renderTaskRef = useRef<{ cancel: () => void } | null>(null);
 
-  // Load PDF
-  useEffect(() => {
+  // Reset loading/error/pdf state when src changes (derived state from props pattern)
+  if (prevSrc !== src) {
+    setPrevSrc(src);
+    setPdf(null);
+    setNumPages(0);
+    setCurrentPage(1);
     setLoading(true);
     setError(null);
+  }
 
+  // Load PDF
+  useEffect(() => {
     const loadTask = getDocument(src);
     loadTask.promise
       .then((doc) => {

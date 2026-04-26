@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useState } from 'react';
 
 interface Props {
   src: string;
@@ -7,13 +7,16 @@ interface Props {
 
 export default function HtmlViewer({ src, onScroll }: Props) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [prevSrc, setPrevSrc] = useState(src);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  useEffect(() => {
+  // Reset loading/error state when src changes (derived state from props pattern)
+  if (prevSrc !== src) {
+    setPrevSrc(src);
     setLoading(true);
     setError(false);
-  }, [src]);
+  }
 
   const handleLoad = () => {
     setLoading(false);
