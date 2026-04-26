@@ -1,0 +1,81 @@
+{
+  "version": "1.0.0",
+  "comics": [
+    {
+      "id": "cosmic-odyssey",
+      "title": "Cosmic Odyssey",
+      "description": "An epic space adventure following Captain Zara through the uncharted reaches of the Andromeda galaxy. Stunning visuals and an unforgettable story await.",
+      "mode": "images",
+      "cover": "data/comics/cosmic-odyssey/cover.jpg",
+      "authors": ["Alex Nova", "Jamie Star"],
+      "genres": ["Sci-Fi", "Adventure"],
+      "year": 2024,
+      "language": "en",
+      "featured": true,
+      "chapters": [
+        {
+          "id": "ch01",
+          "title": "The Awakening",
+          "number": 1,
+          "manifestUrl": "data/comics/cosmic-odyssey/chapters/ch01.json",
+          "cover": "data/comics/cosmic-odyssey/covers/ch01.jpg",
+          "date": "2024-01-15",
+          "free": true
+        },
+        {
+          "id": "ch02",
+          "title": "Beyond the Void",
+          "number": 2,
+          "manifestUrl": "data/comics/cosmic-odyssey/chapters/ch02.json",
+          "cover": "data/comics/cosmic-odyssey/covers/ch02.jpg",
+          "date": "2024-02-01",
+          "free": false
+        }
+      ]
+    },
+    {
+      "id": "digital-dreams",
+      "title": "Digital Dreams",
+      "description": "A cyberpunk noir story set in Neo-Tokyo 2099. When a hacker discovers a conspiracy that goes all the way to the top, she must decide who to trust.",
+      "mode": "pdf",
+      "cover": "data/comics/digital-dreams/cover.jpg",
+      "authors": ["Mira Chen"],
+      "genres": ["Cyberpunk", "Thriller"],
+      "year": 2023,
+      "language": "en",
+      "featured": true,
+      "chapters": [
+        {
+          "id": "ch01",
+          "title": "Neon Shadows",
+          "number": 1,
+          "manifestUrl": "data/comics/digital-dreams/chapters/ch01.json",
+          "date": "2023-09-10",
+          "free": true
+        }
+      ]
+    },
+    {
+      "id": "legend-of-oak",
+      "title": "Legend of Oak",
+      "description": "A timeless fantasy epic where an ancient forest awakens to protect its secrets. Rich storytelling with hand-painted illustrations.",
+      "mode": "html",
+      "cover": "data/comics/legend-of-oak/cover.jpg",
+      "authors": ["Tom Forest", "Diana Leaf"],
+      "genres": ["Fantasy", "Adventure"],
+      "year": 2024,
+      "language": "en",
+      "featured": false,
+      "chapters": [
+        {
+          "id": "ch01",
+          "title": "Roots",
+          "number": 1,
+          "manifestUrl": "data/comics/legend-of-oak/chapters/ch01.json",
+          "date": "2024-03-20",
+          "free": true
+        }
+      ]
+    }
+  ]
+}

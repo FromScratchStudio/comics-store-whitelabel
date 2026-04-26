@@ -1,0 +1,24 @@
+{
+  "id": "ch02",
+  "title": "Beyond the Void",
+  "pages": [
+    {
+      "url": "https://picsum.photos/seed/cosmic-ch2-p1/800/1200",
+      "alt": "Page 1 – Into the void",
+      "width": 800,
+      "height": 1200
+    },
+    {
+      "url": "https://picsum.photos/seed/cosmic-ch2-p2/800/1200",
+      "alt": "Page 2 – Strange encounter",
+      "width": 800,
+      "height": 1200
+    },
+    {
+      "url": "https://picsum.photos/seed/cosmic-ch2-p3/800/1200",
+      "alt": "Page 3 – The artifact",
+      "width": 800,
+      "height": 1200
+    }
+  ]
+}

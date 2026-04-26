@@ -1,0 +1,42 @@
+{
+  "id": "ch01",
+  "title": "The Awakening",
+  "pages": [
+    {
+      "url": "https://picsum.photos/seed/cosmic-p1/800/1200",
+      "alt": "Page 1 – The ship emerges from hyperspace",
+      "width": 800,
+      "height": 1200
+    },
+    {
+      "url": "https://picsum.photos/seed/cosmic-p2/800/1200",
+      "alt": "Page 2 – Captain Zara on the bridge",
+      "width": 800,
+      "height": 1200
+    },
+    {
+      "url": "https://picsum.photos/seed/cosmic-p3/800/1200",
+      "alt": "Page 3 – The mysterious signal",
+      "width": 800,
+      "height": 1200
+    },
+    {
+      "url": "https://picsum.photos/seed/cosmic-p4/800/1200",
+      "alt": "Page 4 – Crew briefing",
+      "width": 800,
+      "height": 1200
+    },
+    {
+      "url": "https://picsum.photos/seed/cosmic-p5/800/1200",
+      "alt": "Page 5 – The planet below",
+      "width": 800,
+      "height": 1200
+    },
+    {
+      "url": "https://picsum.photos/seed/cosmic-p6/800/1200",
+      "alt": "Page 6 – Descent into the unknown",
+      "width": 800,
+      "height": 1200
+    }
+  ]
+}
